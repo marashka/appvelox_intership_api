@@ -3,7 +3,6 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.utils import timezone as tz
 from rest_framework import status
-import random
 from rest_framework.test import APIClient, APITestCase
 
 from tasks.models import Task
