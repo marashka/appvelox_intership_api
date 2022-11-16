@@ -13,7 +13,7 @@ class TaskAlreadyFinishedError(APIException):
     """Вызывается, когда confirmation code невалидный."""
 
     status_code = status.HTTP_400_BAD_REQUEST
-    default_detail = 'Задача уже отмечена как выполненная'
+    default_detail = 'Задача уже отмечена как выполненная.'
     default_code = 'invalid_confirmation_code'
 
 

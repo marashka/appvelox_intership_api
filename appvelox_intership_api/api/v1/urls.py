@@ -6,6 +6,8 @@ from rest_framework_simplejwt.views import (TokenObtainPairView,
 from .views import (CreateTaskView, DeleteTaskView, FinishTaskVIew,
                     ShowTaskViewSet, SignUpView)
 
+app_name = 'api_v1'
+
 router = DefaultRouter()
 
 router.register(

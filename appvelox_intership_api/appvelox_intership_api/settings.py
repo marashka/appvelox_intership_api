@@ -30,8 +30,9 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'django_filters',
     'tasks.apps.TasksConfig',
-    'api.v1.apps.ApiConfig',
+    'api.apps.ApiConfig',
     'users.apps.UsersConfig',
+    'ultis.apps.UltisConfig',
 ]
 
 MIDDLEWARE = [
@@ -93,13 +94,13 @@ AUTH_USER_MODEL = 'users.User'
 
 LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
+
+USE_TZ = True
 
 USE_I18N = True
 
 USE_L10N = True
-
-USE_TZ = True
 
 STATIC_URL = '/static/'
 

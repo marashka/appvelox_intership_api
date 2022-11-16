@@ -16,8 +16,7 @@ User = get_user_model()
 
 
 class SignUpView(generics.CreateAPIView):
-    """Регистрирует пользователя"""
-
+    """Регистрирует пользователя."""
     serializer_class = SignupSerializer
     permission_classes = (AllowAny,)
 
@@ -26,8 +25,7 @@ class SignUpView(generics.CreateAPIView):
 
 
 class CreateTaskView(generics.CreateAPIView):
-    """Создает задачу"""
-
+    """Создает задачу."""
     serializer_class = TaskSerializers
 
     def perform_create(self, serializer):
@@ -36,22 +34,19 @@ class CreateTaskView(generics.CreateAPIView):
 
 
 class ShowTaskViewSet(GetTaskMixin, viewsets.ReadOnlyModelViewSet):
-    """Выводит список задач/задачу"""
-
+    """Выводит список задач/задачу."""
     serializer_class = TaskSerializers
     filter_backends = (DjangoFilterBackend,)
     filterset_fields = ('is_finished',)
 
 
 class DeleteTaskView(GetTaskMixin, generics.DestroyAPIView):
-    """Удаляет задачу"""
-
+    """Удаляет задачу."""
     serializer_class = TaskSerializers
 
 
 class FinishTaskVIew(APIView):
-    """Отмечает задачу как выполненную"""
-
+    """Отмечает задачу как выполненную."""
     def patch(self, request, pk):
         try:
             task = Task.objects.get(author=request.user, id=pk)

@@ -9,7 +9,6 @@ User = get_user_model()
 
 class Task(models.Model):
     """Список задач"""
-
     title = models.CharField(
         max_length=256,
         verbose_name='Название задачи'
