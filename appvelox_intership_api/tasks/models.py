@@ -1,14 +1,13 @@
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.db.models import DateTimeField
-
-from django.conf import settings
 
 User = get_user_model()
 
 
 class Task(models.Model):
-    """Список задач"""
+    """Список задач."""
     title = models.CharField(
         max_length=256,
         verbose_name='Название задачи'

@@ -3,7 +3,6 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.utils import timezone as tz
 from rest_framework import status
-import random
 from rest_framework.test import APIClient, APITestCase
 
 from tasks.models import Task
@@ -134,7 +133,7 @@ class TaskSerializersTest(APITestCase):
                 self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_not_authenticated_user_get_access(self):
-        """Проверка получения доступа неаутентифицированного пользовотеля."""
+        """Проверка получения доступа неаутентифицированного пользователя."""
         urls = (reverse('api_v1:tasks_create'),
                 reverse('api_v1:tasks_show-list'),
                 reverse('api_v1:tasks_show-detail', kwargs={'pk': 1}),
